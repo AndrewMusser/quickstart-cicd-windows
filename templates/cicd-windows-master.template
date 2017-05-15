@@ -464,9 +464,6 @@
                     "KeyPairName": {
                         "Ref": "KeyPairName"
                     },
-                    "NATInstanceType": {
-                        "Ref": "NATInstanceType"
-                    },
                     "NumberOfAZs": "2",
                     "PrivateSubnet1ACIDR": {
                         "Ref": "PrivateSubnet1CIDR"
