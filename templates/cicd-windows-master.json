@@ -9,7 +9,7 @@
     },
     {
         "ParameterKey": "AvailabilityZones",
-        "ParameterValue": "$[alfred_genaz_2]"
+        "ParameterValue": "$[alfred_getaz_2]"
     },
     {
         "ParameterKey": "CodeDeployAppName",
@@ -61,15 +61,11 @@
     },
     {
         "ParameterKey": "KeyPairName",
-        "ParameterValue": "cikey"
+        "ParameterValue": "$[alfred_getkeypair]"
     },
     {
         "ParameterKey": "MSBuildProjectOrSolutionFileName",
         "ParameterValue": "SoccerTeamWeb.csproj"
-    },
-    {
-        "ParameterKey": "NATInstanceType",
-        "ParameterValue": "t2.small"
     },
     {
         "ParameterKey": "PrivateSubnet1CIDR",
@@ -86,22 +82,6 @@
     {
         "ParameterKey": "PublicSubnet2CIDR",
         "ParameterValue": "10.0.144.0/20"
-    },
-    {
-        "ParameterKey": "RDGW1NetBIOSName",
-        "ParameterValue": "RDGW1"
-    },
-    {
-        "ParameterKey": "RDGW1PrivateIP",
-        "ParameterValue": "10.0.128.11"
-    },
-    {
-        "ParameterKey": "RDGW2NetBIOSName",
-        "ParameterValue": "RDGW2"
-    },
-    {
-        "ParameterKey": "RDGW2PrivateIP",
-        "ParameterValue": "10.0.144.11"
     },
     {
         "ParameterKey": "RDGWCIDR",
