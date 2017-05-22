@@ -1,4 +1,4 @@
-#quickstart-cicd-windows
+# quickstart-cicd-windows
 
 This Quick Start automatically deploys a continuous integration / continuous delivery (CI/CD) pipeline on AWS.
 
