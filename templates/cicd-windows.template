@@ -1201,7 +1201,7 @@
                                             "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n",
                                             "<project>\n",
                                             "<actions/><description/><keepDependencies>false</keepDependencies><properties/>\n",
-                                            "<scm plugin=\"aws-codepipeline@0.16\" class=\"com.amazonaws.codepipeline.jenkinsplugin.AWSCodePipelineSCM\">",
+                                            "<scm plugin=\"aws-codepipeline@0.27\" class=\"com.amazonaws.codepipeline.jenkinsplugin.AWSCodePipelineSCM\">",
                                             "<clearWorkspace>true</clearWorkspace>\n",
                                             "<projectName>",
                                             {
@@ -1340,7 +1340,7 @@
                                         "",
                                         [
                                             "powershell.exe -Command \"C:\\cfn\\scripts\\Download-File.ps1 -Source '",
-                                            "http://mirrors.jenkins-ci.org/windows-stable/latest",
+                                            "http://mirrors.jenkins-ci.org/windows-stable/jenkins-2.46.2.zip",
                                             "' -Destination 'C:\\cfn\\downloads\\jenkins.zip'\""
                                         ]
                                     ]
@@ -1351,46 +1351,72 @@
                                 "command": "powershell.exe -Command C:\\cfn\\scripts\\Unzip-Archive.ps1 -Source C:\\cfn\\downloads\\jenkins.zip -Destination C:\\cfn\\downloads\\",
                                 "waitAfterCompletion": "0"
                             },
-                            "f-download-jenkins-msbuild-plugin": {
+                            "f-download-jenkins-structs-plugin": {
                                 "command": {
                                     "Fn::Join": [
                                         "",
                                         [
                                             "powershell.exe -Command \"C:\\cfn\\scripts\\Download-File.ps1 -Source '",
-                                            "http://updates.jenkins-ci.org/latest/msbuild.hpi",
+                                            "http://updates.jenkins-ci.org/download/plugins/structs/1.6/structs.hpi",
+                                            "' -Destination 'C:\\cfn\\downloads\\structs.hpi'\""
+                                        ]
+                                    ]
+                                },
+                                "waitAfterCompletion": "0"
+                            },
+                            "g-download-jenkins-msbuild-plugin": {
+                                "command": {
+                                    "Fn::Join": [
+                                        "",
+                                        [
+                                            "powershell.exe -Command \"C:\\cfn\\scripts\\Download-File.ps1 -Source '",
+                                            "http://updates.jenkins-ci.org/download/plugins/msbuild/1.27/msbuild.hpi",
                                             "' -Destination 'C:\\cfn\\downloads\\msbuild.hpi'\""
                                         ]
                                     ]
                                 },
                                 "waitAfterCompletion": "0"
                             },
-                            "g-download-jenkins-code-pipeline-plugin": {
+                            "h-download-jenkins-code-pipeline-plugin": {
                                 "command": {
                                     "Fn::Join": [
                                         "",
                                         [
                                             "powershell.exe -Command \"C:\\cfn\\scripts\\Download-File.ps1 -Source '",
-                                            "https://updates.jenkins-ci.org/latest/aws-codepipeline.hpi",
+                                            "http://updates.jenkins-ci.org/download/plugins/aws-codepipeline/0.27/aws-codepipeline.hpi",
                                             "' -Destination 'C:\\cfn\\downloads\\aws-codepipeline.hpi'\""
                                         ]
                                     ]
                                 },
                                 "waitAfterCompletion": "0"
                             },
-                            "h-download-jenkins-groovy-plugin": {
+                            "i-download-jenkins-groovy-plugin": {
                                 "command": {
                                     "Fn::Join": [
                                         "",
                                         [
                                             "powershell.exe -Command \"C:\\cfn\\scripts\\Download-File.ps1 -Source '",
-                                            "https://updates.jenkins-ci.org/latest/groovy.hpi",
+                                            "http://updates.jenkins-ci.org/download/plugins/script-security/1.27/script-security.hpi",
+                                            "' -Destination 'C:\\cfn\\downloads\\script-security.hpi'\""
+                                        ]
+                                    ]
+                                },
+                                "waitAfterCompletion": "0"
+                            },
+                            "j-download-jenkins-groovy-plugin": {
+                                "command": {
+                                    "Fn::Join": [
+                                        "",
+                                        [
+                                            "powershell.exe -Command \"C:\\cfn\\scripts\\Download-File.ps1 -Source '",
+                                            "http://updates.jenkins-ci.org/download/plugins/groovy/2.0/groovy.hpi",
                                             "' -Destination 'C:\\cfn\\downloads\\groovy.hpi'\""
                                         ]
                                     ]
                                 },
                                 "waitAfterCompletion": "0"
                             },
-                            "i-download-msbuild": {
+                            "k-download-msbuild": {
                                 "command": {
                                     "Fn::Join": [
                                         "",
@@ -1403,7 +1429,7 @@
                                 },
                                 "waitAfterCompletion": "0"
                             },
-                            "j-install-dotnet-build-server-components": {
+                            "l-install-dotnet-build-server-components": {
                                 "command": {
                                     "Fn::Join": [
                                         "",
@@ -1418,7 +1444,7 @@
                                 },
                                 "waitAfterCompletion": 0
                             },
-                            "k-download-bouncycastle": {
+                            "m-download-bouncycastle": {
                                 "command": {
                                     "Fn::Join": [
                                         "",
@@ -1431,11 +1457,11 @@
                                 },
                                 "waitAfterCompletion": "0"
                             },
-                            "l-unpack-bouncycastle": {
+                            "n-unpack-bouncycastle": {
                                 "command": "powershell.exe -Command C:\\cfn\\scripts\\Unzip-Archive.ps1 -Source C:\\cfn\\downloads\\BouncyCastle.Crypto.zip -Destination C:\\cfn\\downloads\\",
                                 "waitAfterCompletion": "0"
                             },
-                            "m-create-server-certificate-for-elb": {
+                            "o-create-server-certificate-for-elb": {
                                 "command": {
                                     "Fn::Join": [
                                         "",
@@ -1454,7 +1480,7 @@
                                 },
                                 "waitAfterCompletion": 0
                             },
-                            "n-upload-demo-application-source": {
+                            "p-upload-demo-application-source": {
                                 "command": {
                                     "Fn::If": [
                                         "DemoAppIncluded",
@@ -1475,7 +1501,7 @@
                                     ]
                                 }
                             },
-                            "o-signal-success": {
+                            "q-signal-success": {
                                 "command": "powershell.exe -Command \"Write-AWSQuickStartStatus\"",
                                 "waitAfterCompletion": 0
                             }

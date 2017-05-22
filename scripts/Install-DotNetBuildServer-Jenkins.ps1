@@ -26,8 +26,10 @@ try {
     $jenkinsCLIConfig.hudson.slaveAgentPort = "8181"
     $jenkinsCLIConfig.Save("C:\Program Files (x86)\Jenkins\config.xml")
     
+    Copy-Item "C:\cfn\downloads\structs.hpi" "C:\Program Files (x86)\Jenkins\plugins"
     Copy-Item "C:\cfn\downloads\msbuild.hpi" "C:\Program Files (x86)\Jenkins\plugins"
     Copy-Item "C:\cfn\downloads\aws-codepipeline.hpi" "C:\Program Files (x86)\Jenkins\plugins"
+    Copy-Item "C:\cfn\downloads\script-security.hpi" "C:\Program Files (x86)\Jenkins\plugins"    
     Copy-Item "C:\cfn\downloads\groovy.hpi" "C:\Program Files (x86)\Jenkins\plugins"
 
     Restart-Service "Jenkins"
