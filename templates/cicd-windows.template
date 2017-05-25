@@ -338,14 +338,6 @@
                 },
                 "2"
             ]
-        },
-        "GovCloudCondition": {
-            "Fn::Equals": [
-                {
-                    "Ref": "AWS::Region"
-                },
-                "us-gov-west-1"
-            ]
         }
     },
     "Rules": {
@@ -606,18 +598,7 @@
                                         "s3:GetObject"
                                     ],
                                     "Resource": {
-                                        "Fn::Sub": [
-                                            "arn:${Partition}:s3:::${QSS3BucketName}/${QSS3KeyPrefix}*",
-                                            {
-                                                "Partition": {
-                                                    "Fn::If": [
-                                                        "GovCloudCondition",
-                                                        "aws-us-gov",
-                                                        "aws"
-                                                    ]
-                                                }
-                                            }
-                                        ]
+                                        "Fn::Sub": "arn:aws:s3:::${QSS3BucketName}/${QSS3KeyPrefix}*"
                                     },
                                     "Effect": "Allow"
                                 }
@@ -648,18 +629,7 @@
                                         "s3:PutObject"
                                     ],
                                     "Resource": {
-                                        "Fn::Sub": [
-                                            "arn:${Partition}:s3:::${S3BucketForPipeline}/*",
-                                            {
-                                                "Partition": {
-                                                    "Fn::If": [
-                                                        "GovCloudCondition",
-                                                        "aws-us-gov",
-                                                        "aws"
-                                                    ]
-                                                }
-                                            }
-                                        ]
+                                        "Fn::Sub": "arn:aws:s3:::${S3BucketForPipeline}/*"
                                     }
                                 }
                             ]
@@ -722,18 +692,7 @@
                                         "s3:GetObject"
                                     ],
                                     "Resource": {
-                                        "Fn::Sub": [
-                                            "arn:${Partition}:s3:::${QSS3BucketName}/${QSS3KeyPrefix}*",
-                                            {
-                                                "Partition": {
-                                                    "Fn::If": [
-                                                        "GovCloudCondition",
-                                                        "aws-us-gov",
-                                                        "aws"
-                                                    ]
-                                                }
-                                            }
-                                        ]
+                                        "Fn::Sub": "arn:aws:s3:::${QSS3BucketName}/${QSS3KeyPrefix}*"
                                     },
                                     "Effect": "Allow"
                                 }
@@ -750,18 +709,7 @@
                                     "Action": "codedeploy:*",
                                     "Resource": [
                                         {
-                                            "Fn::Sub": [
-                                                "arn:${Partition}:codedeploy:${AWS::Region}:${AWS::AccountId}:application:${CodeDeployAppName}",
-                                                {
-                                                    "Partition": {
-                                                        "Fn::If": [
-                                                            "GovCloudCondition",
-                                                            "aws-us-gov",
-                                                            "aws"
-                                                        ]
-                                                    }
-                                                }
-                                            ]
+                                            "Fn::Sub": "arn:aws:codedeploy:${AWS::Region}:${AWS::AccountId}:application:${CodeDeployAppName}"
                                         }
                                     ]
                                 },
@@ -773,32 +721,10 @@
                                     ],
                                     "Resource": [
                                         {
-                                            "Fn::Sub": [
-                                                "arn:${Partition}:s3:::${S3BucketForPipeline}/*",
-                                                {
-                                                    "Partition": {
-                                                        "Fn::If": [
-                                                            "GovCloudCondition",
-                                                            "aws-us-gov",
-                                                            "aws"
-                                                        ]
-                                                    }
-                                                }
-                                            ]
+                                            "Fn::Sub": "arn:aws:s3:::${S3BucketForPipeline}/*"
                                         },
                                         {
-                                            "Fn::Sub": [
-                                                "arn:${Partition}:s3:::aws-codedeploy-${AWS::Region}/*",
-                                                {
-                                                    "Partition": {
-                                                        "Fn::If": [
-                                                            "GovCloudCondition",
-                                                            "aws-us-gov",
-                                                            "aws"
-                                                        ]
-                                                    }
-                                                }
-                                            ]
+                                            "Fn::Sub": "arn:aws:s3:::aws-codedeploy-${AWS::Region}/*"
                                         }
                                     ]
                                 },
@@ -861,32 +787,10 @@
                             ],
                             "Resource": [
                                 {
-                                    "Fn::Sub": [
-                                        "arn:${Partition}:s3:::${S3BucketForPipeline}/*",
-                                        {
-                                            "Partition": {
-                                                "Fn::If": [
-                                                    "GovCloudCondition",
-                                                    "aws-us-gov",
-                                                    "aws"
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "Fn::Sub": "arn:aws:s3:::${S3BucketForPipeline}/*"
                                 },
                                 {
-                                    "Fn::Sub": [
-                                        "arn:${Partition}:s3:::${S3BucketForPipeline}",
-                                        {
-                                            "Partition": {
-                                                "Fn::If": [
-                                                    "GovCloudCondition",
-                                                    "aws-us-gov",
-                                                    "aws"
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "Fn::Sub": "arn:aws:s3:::${S3BucketForPipeline}"
                                 }
                             ],
                             "Effect": "Allow"
@@ -901,46 +805,13 @@
                             ],
                             "Resource": [
                                 {
-                                    "Fn::Sub": [
-                                        "arn:${Partition}:codedeploy:${AWS::Region}:${AWS::AccountId}:application:${CodeDeployAppName}",
-                                        {
-                                            "Partition": {
-                                                "Fn::If": [
-                                                    "GovCloudCondition",
-                                                    "aws-us-gov",
-                                                    "aws"
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "Fn::Sub": "arn:aws:codedeploy:${AWS::Region}:${AWS::AccountId}:application:${CodeDeployAppName}"
                                 },
                                 {
-                                    "Fn::Sub": [
-                                        "arn:${Partition}:codedeploy:${AWS::Region}:${AWS::AccountId}:deploymentgroup:${CodeDeployAppName}/${CodeDeployDeploymentGroupName}",
-                                        {
-                                            "Partition": {
-                                                "Fn::If": [
-                                                    "GovCloudCondition",
-                                                    "aws-us-gov",
-                                                    "aws"
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "Fn::Sub": "arn:aws:codedeploy:${AWS::Region}:${AWS::AccountId}:deploymentgroup:${CodeDeployAppName}/${CodeDeployDeploymentGroupName}"
                                 },
                                 {
-                                    "Fn::Sub": [
-                                        "arn:${Partition}:codedeploy:${AWS::Region}:${AWS::AccountId}:deploymentconfig:*",
-                                        {
-                                            "Partition": {
-                                                "Fn::If": [
-                                                    "GovCloudCondition",
-                                                    "aws-us-gov",
-                                                    "aws"
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "Fn::Sub": "arn:aws:codedeploy:${AWS::Region}:${AWS::AccountId}:deploymentconfig:*"
                                 }
                             ],
                             "Effect": "Allow"
@@ -968,18 +839,7 @@
                             "Principal": "*",
                             "Action": "s3:PutObject",
                             "Resource": {
-                                "Fn::Sub": [
-                                    "arn:${Partition}:s3:::${S3BucketForPipeline}/*",
-                                    {
-                                        "Partition": {
-                                            "Fn::If": [
-                                                "GovCloudCondition",
-                                                "aws-us-gov",
-                                                "aws"
-                                            ]
-                                        }
-                                    }
-                                ]
+                                "Fn::Sub": "arn:aws:s3:::${S3BucketForPipeline}/*"
                             },
                             "Condition": {
                                 "StringNotEquals": {
@@ -993,18 +853,7 @@
                             "Principal": "*",
                             "Action": "s3:*",
                             "Resource": {
-                                "Fn::Sub": [
-                                    "arn:${Partition}:s3:::${S3BucketForPipeline}/*",
-                                    {
-                                        "Partition": {
-                                            "Fn::If": [
-                                                "GovCloudCondition",
-                                                "aws-us-gov",
-                                                "aws"
-                                            ]
-                                        }
-                                    }
-                                ]
+                                "Fn::Sub": "arn:aws:s3:::${S3BucketForPipeline}/*"
                             },
                             "Condition": {
                                 "Bool": {
@@ -1038,120 +887,43 @@
                         "files": {
                             "C:\\cfn\\scripts\\Unzip-Archive.ps1": {
                                 "source": {
-                                    "Fn::Sub": [
-                                        "https://${QSS3BucketName}.${QSS3Region}.amazonaws.com/${QSS3KeyPrefix}submodules/quickstart-microsoft-utilities/scripts/Unzip-Archive.ps1",
-                                        {
-                                            "QSS3Region": {
-                                                "Fn::If": [
-                                                    "GovCloudCondition",
-                                                    "s3-us-gov-west-1",
-                                                    "s3"
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "Fn::Sub": "https://${QSS3BucketName}.s3.amazonaws.com/${QSS3KeyPrefix}submodules/quickstart-microsoft-utilities/scripts/Unzip-Archive.ps1"
                                 },
                                 "authentication": "S3AccessCreds"
                             },
                             "C:\\cfn\\modules\\AWSQuickStart.zip": {
                                 "source": {
-                                    "Fn::Sub": [
-                                        "https://${QSS3BucketName}.${QSS3Region}.amazonaws.com/${QSS3KeyPrefix}submodules/quickstart-microsoft-utilities/modules/AWSQuickStart.zip",
-                                        {
-                                            "QSS3Region": {
-                                                "Fn::If": [
-                                                    "GovCloudCondition",
-                                                    "s3-us-gov-west-1",
-                                                    "s3"
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "Fn::Sub": "https://${QSS3BucketName}.s3.amazonaws.com/${QSS3KeyPrefix}submodules/quickstart-microsoft-utilities/modules/AWSQuickStart.zip"
                                 },
                                 "authentication": "S3AccessCreds"
                             },
                             "C:\\cfn\\scripts\\Download-File.ps1": {
                                 "source": {
-                                    "Fn::Sub": [
-                                        "https://${QSS3BucketName}.${QSS3Region}.amazonaws.com/${QSS3KeyPrefix}submodules/quickstart-microsoft-utilities/scripts/Download-File.ps1",
-                                        {
-                                            "QSS3Region": {
-                                                "Fn::If": [
-                                                    "GovCloudCondition",
-                                                    "s3-us-gov-west-1",
-                                                    "s3"
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "Fn::Sub": "https://${QSS3BucketName}.s3.amazonaws.com/${QSS3KeyPrefix}submodules/quickstart-microsoft-utilities/scripts/Download-File.ps1"
                                 },
                                 "authentication": "S3AccessCreds"
                             },
                             "C:\\cfn\\scripts\\Upload-FileToS3.ps1": {
                                 "source": {
-                                    "Fn::Sub": [
-                                        "https://${QSS3BucketName}.${QSS3Region}.amazonaws.com/${QSS3KeyPrefix}scripts/Upload-FileToS3.ps1",
-                                        {
-                                            "QSS3Region": {
-                                                "Fn::If": [
-                                                    "GovCloudCondition",
-                                                    "s3-us-gov-west-1",
-                                                    "s3"
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "Fn::Sub": "https://${QSS3BucketName}.s3.amazonaws.com/${QSS3KeyPrefix}scripts/Upload-FileToS3.ps1"
                                 },
                                 "authentication": "S3AccessCreds"
                             },
                             "c:\\cfn\\scripts\\Install-DotNetBuildServer-Jenkins.ps1": {
                                 "source": {
-                                    "Fn::Sub": [
-                                        "https://${QSS3BucketName}.${QSS3Region}.amazonaws.com/${QSS3KeyPrefix}scripts/Install-DotNetBuildServer-Jenkins.ps1",
-                                        {
-                                            "QSS3Region": {
-                                                "Fn::If": [
-                                                    "GovCloudCondition",
-                                                    "s3-us-gov-west-1",
-                                                    "s3"
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "Fn::Sub": "https://${QSS3BucketName}.s3.amazonaws.com/${QSS3KeyPrefix}scripts/Install-DotNetBuildServer-Jenkins.ps1"
                                 },
                                 "authentication": "S3AccessCreds"
                             },
                             "c:\\cfn\\scripts\\New-ServerCertificateForELB.ps1": {
                                 "source": {
-                                    "Fn::Sub": [
-                                        "https://${QSS3BucketName}.${QSS3Region}.amazonaws.com/${QSS3KeyPrefix}scripts/New-ServerCertificateForELB.ps1",
-                                        {
-                                            "QSS3Region": {
-                                                "Fn::If": [
-                                                    "GovCloudCondition",
-                                                    "s3-us-gov-west-1",
-                                                    "s3"
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "Fn::Sub": "https://${QSS3BucketName}.s3.amazonaws.com/${QSS3KeyPrefix}scripts/New-ServerCertificateForELB.ps1"
                                 },
                                 "authentication": "S3AccessCreds"
                             },
                             "c:\\cfn\\downloads\\DemoApp.zip": {
                                 "source": {
-                                    "Fn::Sub": [
-                                        "https://${QSS3BucketName}.${QSS3Region}.amazonaws.com/${QSS3KeyPrefix}demo-assets/DemoApp.zip",
-                                        {
-                                            "QSS3Region": {
-                                                "Fn::If": [
-                                                    "GovCloudCondition",
-                                                    "s3-us-gov-west-1",
-                                                    "s3"
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "Fn::Sub": "https://${QSS3BucketName}.s3.amazonaws.com/${QSS3KeyPrefix}demo-assets/DemoApp.zip"
                                 },
                                 "authentication": "S3AccessCreds"
                             },
@@ -1590,69 +1362,25 @@
                         "files": {
                             "C:\\cfn\\scripts\\Unzip-Archive.ps1": {
                                 "source": {
-                                    "Fn::Sub": [
-                                        "https://${QSS3BucketName}.${QSS3Region}.amazonaws.com/${QSS3KeyPrefix}submodules/quickstart-microsoft-utilities/scripts/Unzip-Archive.ps1",
-                                        {
-                                            "QSS3Region": {
-                                                "Fn::If": [
-                                                    "GovCloudCondition",
-                                                    "s3-us-gov-west-1",
-                                                    "s3"
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "Fn::Sub": "https://${QSS3BucketName}.s3.amazonaws.com/${QSS3KeyPrefix}submodules/quickstart-microsoft-utilities/scripts/Unzip-Archive.ps1"
                                 },
                                 "authentication": "S3AccessCreds"
                             },
                             "C:\\cfn\\modules\\AWSQuickStart.zip": {
                                 "source": {
-                                    "Fn::Sub": [
-                                        "https://${QSS3BucketName}.${QSS3Region}.amazonaws.com/${QSS3KeyPrefix}submodules/quickstart-microsoft-utilities/modules/AWSQuickStart.zip",
-                                        {
-                                            "QSS3Region": {
-                                                "Fn::If": [
-                                                    "GovCloudCondition",
-                                                    "s3-us-gov-west-1",
-                                                    "s3"
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "Fn::Sub": "https://${QSS3BucketName}.s3.amazonaws.com/${QSS3KeyPrefix}submodules/quickstart-microsoft-utilities/modules/AWSQuickStart.zip"
                                 },
                                 "authentication": "S3AccessCreds"
                             },
                             "c:\\cfn\\scripts\\Download-File.ps1": {
                                 "source": {
-                                    "Fn::Sub": [
-                                        "https://${QSS3BucketName}.${QSS3Region}.amazonaws.com/${QSS3KeyPrefix}submodules/quickstart-microsoft-utilities/scripts/Download-File.ps1",
-                                        {
-                                            "QSS3Region": {
-                                                "Fn::If": [
-                                                    "GovCloudCondition",
-                                                    "s3-us-gov-west-1",
-                                                    "s3"
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "Fn::Sub": "https://${QSS3BucketName}.s3.amazonaws.com/${QSS3KeyPrefix}submodules/quickstart-microsoft-utilities/scripts/Download-File.ps1"
                                 },
                                 "authentication": "S3AccessCreds"
                             },
                             "c:\\cfn\\scripts\\Install-CodeDeploy.ps1": {
                                 "source": {
-                                    "Fn::Sub": [
-                                        "https://${QSS3BucketName}.${QSS3Region}.amazonaws.com/${QSS3KeyPrefix}scripts/Install-CodeDeploy.ps1",
-                                        {
-                                            "QSS3Region": {
-                                                "Fn::If": [
-                                                    "GovCloudCondition",
-                                                    "s3-us-gov-west-1",
-                                                    "s3"
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "Fn::Sub": "https://${QSS3BucketName}.s3.amazonaws.com/${QSS3KeyPrefix}scripts/Install-CodeDeploy.ps1"
                                 },
                                 "authentication": "S3AccessCreds"
                             }
@@ -1804,69 +1532,25 @@
                         "files": {
                             "C:\\cfn\\scripts\\Unzip-Archive.ps1": {
                                 "source": {
-                                    "Fn::Sub": [
-                                        "https://${QSS3BucketName}.${QSS3Region}.amazonaws.com/${QSS3KeyPrefix}submodules/quickstart-microsoft-utilities/scripts/Unzip-Archive.ps1",
-                                        {
-                                            "QSS3Region": {
-                                                "Fn::If": [
-                                                    "GovCloudCondition",
-                                                    "s3-us-gov-west-1",
-                                                    "s3"
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "Fn::Sub": "https://${QSS3BucketName}.s3.amazonaws.com/${QSS3KeyPrefix}submodules/quickstart-microsoft-utilities/scripts/Unzip-Archive.ps1"
                                 },
                                 "authentication": "S3AccessCreds"
                             },
                             "C:\\cfn\\modules\\AWSQuickStart.zip": {
                                 "source": {
-                                    "Fn::Sub": [
-                                        "https://${QSS3BucketName}.${QSS3Region}.amazonaws.com/${QSS3KeyPrefix}submodules/quickstart-microsoft-utilities/modules/AWSQuickStart.zip",
-                                        {
-                                            "QSS3Region": {
-                                                "Fn::If": [
-                                                    "GovCloudCondition",
-                                                    "s3-us-gov-west-1",
-                                                    "s3"
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "Fn::Sub": "https://${QSS3BucketName}.s3.amazonaws.com/${QSS3KeyPrefix}submodules/quickstart-microsoft-utilities/modules/AWSQuickStart.zip"
                                 },
                                 "authentication": "S3AccessCreds"
                             },
                             "c:\\cfn\\scripts\\Download-File.ps1": {
                                 "source": {
-                                    "Fn::Sub": [
-                                        "https://${QSS3BucketName}.${QSS3Region}.amazonaws.com/${QSS3KeyPrefix}submodules/quickstart-microsoft-utilities/scripts/Download-File.ps1",
-                                        {
-                                            "QSS3Region": {
-                                                "Fn::If": [
-                                                    "GovCloudCondition",
-                                                    "s3-us-gov-west-1",
-                                                    "s3"
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "Fn::Sub": "https://${QSS3BucketName}.s3.amazonaws.com/${QSS3KeyPrefix}submodules/quickstart-microsoft-utilities/scripts/Download-File.ps1"
                                 },
                                 "authentication": "S3AccessCreds"
                             },
                             "c:\\cfn\\scripts\\Install-CodeDeploy.ps1": {
                                 "source": {
-                                    "Fn::Sub": [
-                                        "https://${QSS3BucketName}.${QSS3Region}.amazonaws.com/${QSS3KeyPrefix}scripts/Install-CodeDeploy.ps1",
-                                        {
-                                            "QSS3Region": {
-                                                "Fn::If": [
-                                                    "GovCloudCondition",
-                                                    "s3-us-gov-west-1",
-                                                    "s3"
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "Fn::Sub": "https://${QSS3BucketName}.s3.amazonaws.com/${QSS3KeyPrefix}scripts/Install-CodeDeploy.ps1"
                                 },
                                 "authentication": "S3AccessCreds"
                             }
@@ -2037,18 +1721,7 @@
                         "Protocol": "HTTPS",
                         "InstanceProtocol": "HTTP",
                         "SSLCertificateId": {
-                            "Fn::Sub": [
-                                "arn:${Partition}:iam::${AWS::AccountId}:server-certificate/${ELBServerCertificateName}-${AWS::Region}",
-                                {
-                                    "Partition": {
-                                        "Fn::If": [
-                                            "GovCloudCondition",
-                                            "aws-us-gov",
-                                            "aws"
-                                        ]
-                                    }
-                                }
-                            ]
+                            "Fn::Sub": "arn:aws:iam::${AWS::AccountId}:server-certificate/${ELBServerCertificateName}-${AWS::Region}"
                         }
                     }
                 ],
@@ -2091,18 +1764,7 @@
                         "Protocol": "HTTPS",
                         "InstanceProtocol": "HTTP",
                         "SSLCertificateId": {
-                            "Fn::Sub": [
-                                "arn:${Partition}:iam::${AWS::AccountId}:server-certificate/${ELBServerCertificateName}-${AWS::Region}",
-                                {
-                                    "Partition": {
-                                        "Fn::If": [
-                                            "GovCloudCondition",
-                                            "aws-us-gov",
-                                            "aws"
-                                        ]
-                                    }
-                                }
-                            ]
+                            "Fn::Sub": "arn:aws:iam::${AWS::AccountId}:server-certificate/${ELBServerCertificateName}-${AWS::Region}"
                         }
                     }
                 ],
