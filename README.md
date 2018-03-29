@@ -1,4 +1,5 @@
 # quickstart-cicd-windows
+## CI/CD Pipeline for Windows on the AWS Cloud
 
 This Quick Start automatically deploys a continuous integration / continuous delivery (CI/CD) pipeline on AWS.
 
@@ -9,4 +10,8 @@ You can use the Quick Start to integrate your own code push, build, and deploy p
 
 ![Quick Start CI/CD Pipeline for Windows Design Architecture](https://d3ulk6ur3a3ha.cloudfront.net/partner-network/QuickStart/datasheets/cicd-pipeline-for%20windows-on-aws-architecture.png)
 
-The Quick Start provides parameters that you can set to customize your deployment. For architectural details, best practices, step-by-step instructions, and customization options, see the deployment guide: https://s3.amazonaws.com/quickstart-reference/cicd/windows/latest/doc/cicd-pipeline-for-windows-on-the-aws-cloud.pdf
+For architectural details, best practices, step-by-step instructions, and customization options, see the 
+[deployment guide](https://fwd.aws/nrbbB).
+
+To post feedback, submit feature ideas, or report bugs, use the **Issues** section of this GitHub repo.
+If you'd like to submit code for this Quick Start, please review the [AWS Quick Start Contributor's Kit](https://aws-quickstart.github.io/). 
