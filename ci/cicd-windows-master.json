@@ -100,10 +100,6 @@
         "ParameterValue": "DemoApp\\SoccerTeamWeb"
     },
     {
-        "ParameterKey": "QSS3BucketName",
-        "ParameterValue": "al-qs-us-east-1"
-    },
-    {
         "ParameterKey": "VPCCIDR",
         "ParameterValue": "10.0.0.0/16"
     }

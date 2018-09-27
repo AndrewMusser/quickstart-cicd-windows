@@ -20,10 +20,10 @@ tests:
   master:
     parameter_input: cicd-windows-master.json
     regions:
-    #  - ap-southeast-1
-    #  - ap-southeast-2
-    #  - eu-west-1
+      - ap-southeast-1
+      - ap-southeast-2
+      - eu-west-1
       - us-east-1
-    #  - us-east-2
-    #  - us-west-2
+      - us-east-2
+      - us-west-2
     template_file: cicd-windows-master.template
