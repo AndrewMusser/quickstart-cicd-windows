@@ -29,7 +29,7 @@
     },
     {
         "ParameterKey": "DemoAppDBPassword",
-        "ParameterValue": "$[alfred_genpass_32]"
+        "ParameterValue": "$[alfred_genpass_16]"
     },
     {
         "ParameterKey": "DemoAppDBUserName",
@@ -53,7 +53,7 @@
     },
     {
         "ParameterKey": "JenkinsPassword",
-        "ParameterValue": "$[alfred_genpass_32]"
+        "ParameterValue": "$[alfred_genpass_16]"
     },
     {
         "ParameterKey": "JenkinsUserName",
