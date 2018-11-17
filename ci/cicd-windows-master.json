@@ -1,7 +1,7 @@
 [
     {
         "ParameterKey": "AdminPassword",
-        "ParameterValue": "$[alfred_genpass_16]"
+        "ParameterValue": "$[taskcat_genpass_16]"
     },
     {
         "ParameterKey": "AdminUser",
@@ -9,15 +9,15 @@
     },
     {
         "ParameterKey": "AvailabilityZones",
-        "ParameterValue": "$[alfred_getaz_2]"
+        "ParameterValue": "$[taskcat_getaz_2]"
     },
     {
         "ParameterKey": "CodeDeployAppName",
-        "ParameterValue": "$[alfred_genpass_8]"
+        "ParameterValue": "$[taskcat_genpass_8]"
     },
     {
         "ParameterKey": "CodeDeployDeploymentGroupName",
-        "ParameterValue": "$[alfred_genuuid]"
+        "ParameterValue": "$[taskcat_genuuid]"
     },
     {
         "ParameterKey": "CodeDeployNumberOfServers",
@@ -29,7 +29,7 @@
     },
     {
         "ParameterKey": "DemoAppDBPassword",
-        "ParameterValue": "$[alfred_genpass_16]"
+        "ParameterValue": "$[taskcat_genpass_16]"
     },
     {
         "ParameterKey": "DemoAppDBUserName",
@@ -53,7 +53,7 @@
     },
     {
         "ParameterKey": "JenkinsPassword",
-        "ParameterValue": "$[alfred_genpass_16]"
+        "ParameterValue": "$[taskcat_genpass_16]"
     },
     {
         "ParameterKey": "JenkinsUserName",
