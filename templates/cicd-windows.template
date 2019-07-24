@@ -373,6 +373,9 @@
             "ap-northeast-2": {
                 "WS2012R2": "ami-0ffe7109456576e22"
             },
+            "ap-northeast-3": {
+                "WS2012R2": "ami-093386d87628f35c3"
+            },
             "ap-south-1": {
                 "WS2012R2": "ami-03d1bbb0fb080106a"
             },
@@ -387,6 +390,12 @@
             },
             "eu-west-1": {
                 "WS2012R2": "ami-0a3b775d0b1587522"
+            },
+            "eu-west-2": {
+                "WS2012R2": "ami-085fc413f85df3839"
+            },
+            "eu-west-3": {
+                "WS2012R2": "ami-010fe7fe27659a8a2"
             },
             "sa-east-1": {
                 "WS2012R2": "ami-039a1df2bc73444c8"
