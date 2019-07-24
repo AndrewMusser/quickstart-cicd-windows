@@ -401,7 +401,10 @@
                 "WS2012R2": "ami-05dfef67219fd3817"
             },
             "us-west-2": {
-                "WS2012R2": "ami-05cf702a535de6430"
+                "WS2012R2": "ami-0a5d3dc8c24be5e7e"
+            },
+            "ca-central-1": {
+                "WS2012R2": "ami-084305971dabb03af"
             }
         }
     },
@@ -461,7 +464,7 @@
                 "AllocatedStorage": "50",
                 "DBInstanceClass": "db.t2.micro",
                 "Engine": "sqlserver-ex",
-                "EngineVersion": "12.00.4422.0.v1",
+                "EngineVersion": "12.00.5000.0.v1",
                 "MultiAZ": "false",
                 "MasterUsername": {
                     "Ref": "DemoAppDBUserName"
