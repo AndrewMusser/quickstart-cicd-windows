@@ -401,10 +401,10 @@
                 "WS2012R2": "ami-05dfef67219fd3817"
             },
             "us-west-2": {
-                "WS2012R2": "ami-0a5d3dc8c24be5e7e"
+                "WS2012R2": "ami-05cf702a535de6430"
             },
             "ca-central-1": {
-                "WS2012R2": "ami-084305971dabb03af"
+                "WS2012R2": "ami-023d5d0bf968b6b8d"
             }
         }
     },
