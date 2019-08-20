@@ -407,7 +407,7 @@
                 "WS2012R2": "ami-05cc7c0efc5469642"
             },
             "us-west-1": {
-                "WS2012R2": "ami-05dfef67219fd3817"
+                "WS2012R2": "ami-09c56d1cc9b6f0615"
             },
             "us-west-2": {
                 "WS2012R2": "ami-05cf702a535de6430"
