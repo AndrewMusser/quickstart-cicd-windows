@@ -386,7 +386,7 @@
                 "WS2012R2": "ami-061e7ecf5eb3633e2"
             },
             "eu-central-1": {
-                "WS2012R2": "ami-09a023d2317d65420"
+                "WS2012R2": "ami-0987d7897f512004d"
             },
             "eu-west-1": {
                 "WS2012R2": "ami-0c43411b5fd2c1129"
@@ -395,7 +395,7 @@
                 "WS2012R2": "ami-010ae2c4ae830c4dd"
             },
             "eu-west-3": {
-                "WS2012R2": "ami-0d0feff63441edc49"
+                "WS2012R2": "ami-05e9b803073bb06b8"
             },
             "sa-east-1": {
                 "WS2012R2": "ami-041a00620190a86f9"
@@ -404,13 +404,13 @@
                 "WS2012R2": "ami-05ad3e9ea4dcd9863"
             },
             "us-east-2": {
-                "WS2012R2": "ami-06d29c77f7ab40cf2"
+                "WS2012R2": "ami-09ee46c8d9abcb966"
             },
             "us-west-1": {
                 "WS2012R2": "ami-05cd4c9c42e255074"
             },
             "us-west-2": {
-                "WS2012R2": "ami-083ae6bd726521e4a"
+                "WS2012R2": "ami-095f164d8ca0bdbbf"
             },
             "ca-central-1": {
                 "WS2012R2": "ami-0c2b4ed63c22f1ea9"
