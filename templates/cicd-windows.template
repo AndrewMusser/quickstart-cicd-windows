@@ -374,7 +374,7 @@
                 "WS2012R2": "ami-053df08898d96e587"
             },
             "ap-northeast-3": {
-                "WS2012R2": "ami-07657f4fdcce06a9c"
+                "WS2012R2": "ami-00360a2315b53f40c"
             },
             "ap-south-1": {
                 "WS2012R2": "ami-0773dc0299ece2df6"
@@ -395,7 +395,7 @@
                 "WS2012R2": "ami-010ae2c4ae830c4dd"
             },
             "eu-west-3": {
-                "WS2012R2": "ami-05e9b803073bb06b8"
+                "WS2012R2": "ami-0d0feff63441edc49"
             },
             "sa-east-1": {
                 "WS2012R2": "ami-041a00620190a86f9"
